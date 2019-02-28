@@ -1,14 +1,12 @@
-filemode = True
-
 from flask import Flask
 from ics import Calendar
 import re
 app = Flask(__name__)
 
 @app.route('/')
-def hello_world():
+def getCalendar():
   calObj = readCalendarFile()
-  calObj.events = [event for event in calObj.events if not shouldEventBeRemoved(event)]
+  calObj.events = [e for e in calObj.events if not shouldEventBeRemoved(e)] #Remove unwanted elements by using list comprehesion
   for event in calObj.events:
     convertNameDescription(event)
   return str(calObj)
@@ -60,10 +58,7 @@ def getIdentifier(event):
   return moodleid.group(1)
 
 def setNote(event, splitarray):
-  try:
-    placeindex = splitarray.index("Note")
-  except ValueError:
-    placeindex = -1
+  placeindex = findIndex(splitarray, "Note")
   if placeindex != -1:
     olddescription = event.description
     event.description = "Note:" + splitarray[placeindex + 1]
@@ -71,10 +66,7 @@ def setNote(event, splitarray):
       event.description = event.description + "\n" + olddescription
 
 def setTeacher(event, splitarray):
-  try:
-    placeindex = splitarray.index("Teacher")
-  except ValueError:
-    placeindex = -1
+  placeindex = findIndex(splitarray, "Teacher")
   if placeindex != -1:
     olddescription = event.description
     event.description = "Teacher:" + splitarray[placeindex + 1]
@@ -104,6 +96,12 @@ def convertName(key):
 def getFirstCategory(event):
   for firstcategory in event.categories: break
   return firstcategory
+
+def findIndex(array, element):
+  try:
+    return splitarray.index(element)
+  except ValueError:
+    return -1
 
 if __name__ == '__main__':
     app.run(debug=True)
