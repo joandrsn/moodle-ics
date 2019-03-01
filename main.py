@@ -1,14 +1,20 @@
 from flask import Flask, Response, request
 from ics import Calendar
+from flask_caching import Cache
+from urllib.request import urlopen
+
 import re
+
+cache = Cache(config={'CACHE_TYPE': 'simple'})
 app = Flask(__name__)
+cache.init_app(app)
 
 @app.route('/calendar.ics')
 def getCalendar():
   key = request.args.get('key')
   if key != 'dDH4oFhogjcFRigxGtdf':
     return Response('Unauthorized', 401)
-  calObj = readCalendarFile()
+  calObj = loadCalendar()
   calObj.events = [e for e in calObj.events if not shouldEventBeRemoved(e)] #Remove unwanted elements by using list comprehesion
   for event in calObj.events:
     convertNameDescription(event)
@@ -17,6 +23,18 @@ def getCalendar():
     mimetype='text/calendar',
     headers={"Content-Disposition":
       "attachment; filename=calendar.ics"})
+
+@cache.cached(timeout=50)
+def loadCalendar():
+  FILE_MODE = False
+  if FILE_MODE:
+    return readCalendarFile()
+  else:
+    return readCalendarFeed()
+
+def readCalendarFeed():
+  url = 'https://www.moodle.aau.dk/calendar/export_execute.php?userid=73462&authtoken=7a78da7e36f12a66d3be5bdc7467fd0c1d89673a&preset_what=all&preset_time=custom'
+  return Calendar(urlopen(url).read().decode('utf8'))
 
 def readCalendarFile():
   calfile = open('icslexport.ics', encoding="utf8")
