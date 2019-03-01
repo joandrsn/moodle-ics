@@ -34,6 +34,7 @@ def loadCalendar():
 
 def readCalendarFeed():
   url = 'https://www.moodle.aau.dk/calendar/export_execute.php?userid=73462&authtoken=7a78da7e36f12a66d3be5bdc7467fd0c1d89673a&preset_what=all&preset_time=custom'
+  print('Requesting new calendar from moodle...')
   return Calendar(urlopen(url).read().decode('utf8'))
 
 def readCalendarFile():
