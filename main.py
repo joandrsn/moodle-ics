@@ -1,15 +1,22 @@
-from flask import Flask
+from flask import Flask, Response, request
 from ics import Calendar
 import re
 app = Flask(__name__)
 
-@app.route('/')
+@app.route('/calendar.ics')
 def getCalendar():
+  key = request.args.get('key')
+  if key != 'dDH4oFhogjcFRigxGtdf':
+    return Response('Unauthorized', 401)
   calObj = readCalendarFile()
   calObj.events = [e for e in calObj.events if not shouldEventBeRemoved(e)] #Remove unwanted elements by using list comprehesion
   for event in calObj.events:
     convertNameDescription(event)
-  return str(calObj)
+  return Response(
+    str(calObj),
+    mimetype='text/calendar',
+    headers={"Content-Disposition":
+      "attachment; filename=calendar.ics"})
 
 def readCalendarFile():
   calfile = open('icslexport.ics', encoding="utf8")
@@ -99,7 +106,7 @@ def getFirstCategory(event):
 
 def findIndex(array, element):
   try:
-    return splitarray.index(element)
+    return array.index(element)
   except ValueError:
     return -1
 
