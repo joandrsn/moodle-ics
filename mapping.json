@@ -1,0 +1,46 @@
+{
+  "F19-28774": {
+    "name": "SPO",
+    "ignore": false
+  },
+  "F19-28773": {
+    "name": "PSS",
+    "ignore": false
+  },
+  "F19-28497": {
+    "name": "SLIAL",
+    "ignore": false
+  },
+  "F19-28797": {
+    "name": "Software 4",
+    "ignore": false
+  },
+  "F19-28356": {
+    "name": "Helligdag",
+    "ignore": false
+  },
+  "F19-28358": {
+    "name": "Projekt aflevering maj 2019",
+    "ignore": false
+  },
+  "F19-28499": {
+    "name": "Studiecafe for IT-uddannelser",
+    "ignore": false
+  },
+  "F19-28781": {
+    "name": "SS",
+    "ignore": false
+  },
+  "F19-28470": {
+    "name": "Computerarkitektur",
+    "ignore": true
+  },
+  "F19-28487": {
+    "name": "Objekt-Orienteret Programmering",
+    "ignore": true
+  },
+  "F19-28405'": {
+    "name": "Datalogi og Software, 2. semester F19",
+    "ignore": true
+  }
+}

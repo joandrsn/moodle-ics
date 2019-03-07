@@ -1,27 +1,32 @@
 import json
 
-config = None
+settings = None
+mapping = None
+settingsfilename = 'settings.json'
+mappingfilename = 'mapping.json'
 
 def loadConfig():
-  global config
-  with open('config.json', 'r') as infile:
-    config = json.load(infile)
+  global settings, configfilename, mapping, mappingfilename
+  with open(configfilename, 'r') as infile:
+    settings = json.load(infile)
+  with open(mappingfilename, 'r') as infile:
+    mapping = json.load(infile)
 
 def getName(originalname, courseid):
-  global config
-  inputvalue = config['COURSEMAPPING'].get(courseid)
+  global mapping
+  inputvalue = mapping.get(courseid)
   if inputvalue is not None:
     return inputvalue
   name = "U' " + originalname
-  config['COURSEMAPPING'][courseid] = {
+  mapping[courseid] = {
     'name': name,
     'ignore': False
   }
-  updateConfig()
+  updateMapping()
   return name
 
-def updateConfig():
-  global config
-  with open('config2.json', 'w') as outfile:
-    json.dump(config, outfile, indent=2, sort_keys=False)
+def updateMapping():
+  global mapping
+  with open(mappingfilename, 'w') as outfile:
+    json.dump(mapping, outfile, indent=2, sort_keys=False)
 
