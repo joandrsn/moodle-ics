@@ -9,7 +9,7 @@ def getCalendar():
     return readCalendarFeed()
 
 def readCalendarFeed():
-  url = config.config['feed']
+  url = config.settings['feed']
   print('Requesting new calendar from moodle...')
   return urlopen(url).read().decode('utf8')
 

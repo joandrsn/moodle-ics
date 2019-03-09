@@ -2,15 +2,22 @@ import json
 
 settings = None
 mapping = None
+unwantedcourses = None
 settingsfilename = 'settings.json'
 mappingfilename = 'mapping.json'
 
 def loadConfig():
-  global settings, mapping
+  global settings, mapping, unwantedcourses
+  if settings != None:
+    return
   with open(settingsfilename, 'r') as infile:
     settings = json.load(infile)
   with open(mappingfilename, 'r') as infile:
     mapping = json.load(infile)
+  unwantedcourses = []
+  for key, value in mapping.items():
+    if value['ignore']:
+      unwantedcourses.append(key)
 
 def getName(originalname, courseid):
   global mapping

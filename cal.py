@@ -7,9 +7,23 @@ from ics import Calendar
 def getModifiedCalendar():
   config.loadConfig()
   calendar = Calendar(moodle_cal.getCalendar())
+  removeUnwantedEvents(calendar)
   updateEvents(calendar.events)
-  return len(calendar.events)
+  return str(calendar)
 
+def removeUnwantedEvents(calendar):
+  calendar.events = [e for e in calendar.events if not shouldEventBeRemoved(e)]
+
+def shouldEventBeRemoved(event):
+  if not event.name.startswith('Course:'):
+    return False
+  startmonth = event.begin.month
+  if startmonth in config.settings['ignoremonths']:
+    return False
+  identifier = getCourseID(event.categories)
+  if identifier == None:
+    return False
+  return identifier in config.unwantedcourses
 
 def updateEvents(events):
   for event in events:
@@ -20,11 +34,8 @@ def updateEvents(events):
 
     event.description = getNewDescription(event.description, namedict.get('Note'), namedict.get('Teacher'))
     event.location = getNewLocation(event.location, namedict.get('Place'))
-    oldname = event.name
-    #print(oldname)
+    event.url = getNewURL(courseid)
     event.name = getNewName(event.name, courseid)
-    #print(' AFTER:' + event.name + ' BEFORE: ' + oldname)
-    print(event.name)
 
 def getCourseID(categories):
   for category in categories: break
@@ -33,8 +44,6 @@ def getCourseID(categories):
   if idmatch == None:
     return ''
   return idmatch.group(1)
-
-
 
 def parseEventSummary(eventsummary):
   regex = r'([A-Za-z]+): (.+?)(?= - [A-Z]|$)'
@@ -45,7 +54,6 @@ def parseEventSummary(eventsummary):
   for element in listmatch:
     objdict[element[0]] = element[1]
   return objdict
-
 
 def getNewDescription(originaleventdescription, note, teacher):
   array = []
@@ -64,3 +72,7 @@ def getNewLocation(orignallocation, newlocation):
 
 def getNewName(originalname, courseid):
   return config.getName(originalname, courseid)
+
+def getNewURL(courseid):
+  match = re.search(r'\d+$', courseid)
+  return config.settings['baseurl'] + match.group()

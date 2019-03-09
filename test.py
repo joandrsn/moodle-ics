@@ -1,3 +1,4 @@
-import cal
+from cal import getModifiedCalendar
+import timeit
 
-print(cal.getModifiedCalendar())
+print(timeit.timeit(getModifiedCalendar, number=1))
