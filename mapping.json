@@ -42,5 +42,65 @@
   "F19-28405'": {
     "name": "Datalogi og Software, 2. semester F19",
     "ignore": true
+  },
+  "F19-28405": {
+    "name": "U' Course: Semesterrum Datalogi 2 og Software 2 - F19 - Note: Styringsgruppem\u00f8de nr.3 - Time: 14:30 - 16:00 - Place: A223  Strandvejen 12-14 - Teacher: Kurt N\u00f8rmark|normark@cs.aau.dk",
+    "ignore": false
+  },
+  "F19-28791": {
+    "name": "U' Course: Computer Science 4 - Note: Styregruppem\u00f8de - Time: 10:00 - 11:00 - Place: 0.2.90 - Teacher: Hans H\u00fcttel|hans@cs.aau.dk",
+    "ignore": false
+  },
+  "E18-26447": {
+    "name": "U' Course: Ordin\u00e6r- og reeksamen vinter 2018/2019 - F\u00f8rste Studie\u00e5r  Aalborg - Note: Reeksamen fra 1. semester - Time: 8:00 - 14:00 - Place: Se info p\u00e5 moodle-rummet.",
+    "ignore": false
+  },
+  "E18-26907": {
+    "name": "U' Course: Datalogiens Teoretiske Grundlag (DTG) - (DAT1  SW1) - AAL E18 - Note: Sp\u00f8rgetime/repetition inden DTG reeksamen  - Time: 16:00 - 19:00 - Place: Aud 1  Badehusvej 9",
+    "ignore": false
+  },
+  "E18-27350": {
+    "name": "U' DEB exam - E18 closes",
+    "ignore": false
+  },
+  "E18-27324": {
+    "name": "U' Course: Computer Science 3 (DAT3) Software 3 (SW3) - Note: DEB written exam - Time: 10:00 - 12:00 - Place: AKKC",
+    "ignore": false
+  },
+  "E18-26902": {
+    "name": "U' Course: H7 - Problembaseret l\u00e6ring i videnskab  teknologi og samfund (PV) (DAT1  SW1) - AAL E18 - Note: PV eksamen - opgave i Digital eksamen - Time: 08:00 - 15:00",
+    "ignore": false
+  },
+  "E18-26448": {
+    "name": "U' Course: Projektaflevering / Project hand in - 2018/2019 - Note: Aflevering af procesanalyse (pr. mail) - Time: 10:00 - 10:00",
+    "ignore": false
+  },
+  "E18-26435": {
+    "name": "U' Course: Semesterrum Datalogi 1 og Software 1 - Note: Aflevering af procesanalyse - Time: 10:00 - 10:00",
+    "ignore": false
+  },
+  "E18-27626": {
+    "name": "U' Course: Studiecafe for 1. semester - E18 - Time: 15:00 - 18:00 - Place: C1-12 Skibbrogade 5",
+    "ignore": false
+  },
+  "E18-26908": {
+    "name": "U' Course: Imperative Programming (IMPR) (DAT1  SW1  IxD3) - AAL E18 - Note: aflevering af eksamensopgave - Time: 12:00 - 12:00",
+    "ignore": false
+  },
+  "E18-27362": {
+    "name": "U' Course: Algorithms and Data Structures (AD1) (DAT3  SW3) - Note: Selfstudy - Time: 12:30 - 16:15 - Place: Group rooms",
+    "ignore": false
+  },
+  "E18-27347": {
+    "name": "U' Course: Systems Development (SU) (DAT3  SW3  IxD5  iDA7) - Note: Exercises - Time: 10:15 - 12:00 - Place: Group rooms - Teacher: Jan Stage|jans@cs.aau.dk",
+    "ignore": false
+  },
+  "F18-23946": {
+    "name": "U' Course: Syntax and Semantics (DAT4  SW4  BAIT6T) - Note: Question &amp; Answer session - Time: 10:00 - 12:00 - Place: NOVI8  AUD. - Teacher: Hans H\u00fcttel|hans@cs.aau.dk",
+    "ignore": false
+  },
+  "F18-23935": {
+    "name": "U' Course: Software Innovation (DAT8  SW8  IDA8  IxD8  CS-IT8) - Note: Mini Project - Time: 10:15 - 12:00 - Teacher: Ivan Aaen|ivan@cs.aau.dk",
+    "ignore": false
   }
 }

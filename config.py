@@ -6,8 +6,8 @@ settingsfilename = 'settings.json'
 mappingfilename = 'mapping.json'
 
 def loadConfig():
-  global settings, configfilename, mapping, mappingfilename
-  with open(configfilename, 'r') as infile:
+  global settings, mapping
+  with open(settingsfilename, 'r') as infile:
     settings = json.load(infile)
   with open(mappingfilename, 'r') as infile:
     mapping = json.load(infile)
@@ -16,7 +16,7 @@ def getName(originalname, courseid):
   global mapping
   inputvalue = mapping.get(courseid)
   if inputvalue is not None:
-    return inputvalue
+    return inputvalue['name']
   name = "U' " + originalname
   mapping[courseid] = {
     'name': name,
