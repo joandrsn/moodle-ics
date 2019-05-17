@@ -3,6 +3,7 @@ from flask_caching import Cache
 import cal
 import config
 
+
 cache = Cache(config={'CACHE_TYPE': 'simple'})
 app = Flask(__name__)
 cache.init_app(app)

@@ -11,9 +11,11 @@ fi
 case "$1" in 
   dev)
     export FLASK_ENV=development
+    export ENV=dev
     ;;
   prod)
     unset FLASK_ENV
+    export ENV=prod
     ;;
   *)
     echo "Use either 'prod' or 'dev'"
