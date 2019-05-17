@@ -18,7 +18,7 @@ def getCalendarFile():
   if key != config.settings['key']:
     return Response('Unauthorized', 401)
   return Response(
-    cal.getModifiedCalendar(),
+    getModifiedCalendar(),
     mimetype='text/calendar',
     headers={"Content-Disposition":
       "attachment; filename=calendar.ics"})

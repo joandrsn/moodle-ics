@@ -2,7 +2,7 @@ from urllib.request import urlopen
 import config
 
 def getCalendar():
-  FILE_MODE = True
+  FILE_MODE = False
   if FILE_MODE:
     return readCalendarFile()
   else:

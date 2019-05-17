@@ -8,8 +8,6 @@ mappingfilename = 'mapping.json'
 
 def loadConfig():
   global settings, mapping, unwantedcourses
-  if settings != None:
-    return
   with open(settingsfilename, 'r') as infile:
     settings = json.load(infile)
   with open(mappingfilename, 'r') as infile:

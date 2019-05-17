@@ -1,102 +1,110 @@
 {
-  "F19-28774": {
-    "name": "SPO",
-    "ignore": false
-  },
-  "F19-28773": {
-    "name": "PSS",
-    "ignore": false
-  },
-  "F19-28497": {
-    "name": "SLIAL",
-    "ignore": false
-  },
-  "F19-28797": {
-    "name": "Software 4",
-    "ignore": false
-  },
-  "F19-28356": {
-    "name": "Helligdag",
-    "ignore": true
-  },
-  "F19-28358": {
-    "name": "Projekt aflevering maj 2019",
-    "ignore": false
-  },
-  "F19-28499": {
-    "name": "Studiecafe for IT-uddannelser",
-    "ignore": false
-  },
-  "F19-28781": {
-    "name": "SS",
-    "ignore": false
-  },
-  "F19-28470": {
-    "name": "Computerarkitektur",
-    "ignore": true
-  },
-  "F19-28487": {
-    "name": "Objekt-Orienteret Programmering",
-    "ignore": true
-  },
   "F19-28405": {
-    "name": "Datalogi og Software, 2. semester F19",
-    "ignore": true
-  },
-  "F19-28791": {
-    "name": "DAT4 styregruppem\u00f8de",
-    "ignore": false
-  },
-  "E18-26447": {
-    "name": "U' Course: Ordin\u00e6r- og reeksamen vinter 2018/2019 - F\u00f8rste Studie\u00e5r  Aalborg - Note: Reeksamen fra 1. semester - Time: 8:00 - 14:00 - Place: Se info p\u00e5 moodle-rummet.",
-    "ignore": false
+    "ignore": true,
+    "name": "Datalogi og Software, 2. semester F19"
   },
   "E18-26907": {
-    "name": "DTG",
-    "ignore": false
+    "ignore": false,
+    "name": "DTG"
   },
-  "E18-27350": {
-    "name": "U' DEB exam - E18 closes",
-    "ignore": false
+  "F19-28470": {
+    "ignore": true,
+    "name": "Computerarkitektur"
+  },
+  "E18-27354": {
+    "ignore": false,
+    "name": "U' Course: Real-time Systems (SW5  CS-IT7) - Note: Lecture + exercises - Time: 12:30 - 16:15 - Place: NOVI9  1.112 + 1.114 - Teacher: Ren\u00e9 Rydhof Hansen|rrh@cs.aau.dk"
   },
   "E18-27324": {
-    "name": "DAT3/SW3",
-    "ignore": false
+    "ignore": false,
+    "name": "DAT3/SW3"
   },
-  "E18-26902": {
-    "name": "PV",
-    "ignore": false
-  },
-  "E18-26448": {
-    "name": "U' Course: Projektaflevering / Project hand in - 2018/2019 - Note: Aflevering af procesanalyse (pr. mail) - Time: 10:00 - 10:00",
-    "ignore": false
-  },
-  "E18-26435": {
-    "name": "U' Course: Semesterrum Datalogi 1 og Software 1 - Note: Aflevering af procesanalyse - Time: 10:00 - 10:00",
-    "ignore": false
-  },
-  "E18-27626": {
-    "name": "U' Course: Studiecafe for 1. semester - E18 - Time: 15:00 - 18:00 - Place: C1-12 Skibbrogade 5",
-    "ignore": false
-  },
-  "E18-26908": {
-    "name": "IMPR",
-    "ignore": false
-  },
-  "E18-27362": {
-    "name": "AD1",
-    "ignore": false
-  },
-  "E18-27347": {
-    "name": "SU",
-    "ignore": true
+  "F19-28358": {
+    "ignore": false,
+    "name": "Projekt aflevering maj 2019"
   },
   "F18-23946": {
-    "name": "SS 2018",
-    "ignore": false
+    "ignore": false,
+    "name": "SS 2018"
+  },
+  "F19-28487": {
+    "ignore": true,
+    "name": "OOP"
+  },
+  "E18-26908": {
+    "ignore": false,
+    "name": "IMPR"
+  },
+  "E18-26448": {
+    "ignore": false,
+    "name": "U' Course: Projektaflevering / Project hand in - 2018/2019 - Note: Aflevering af procesanalyse (pr. mail) - Time: 10:00 - 10:00"
+  },
+  "F19-28774": {
+    "ignore": false,
+    "name": "SPO"
+  },
+  "F19-28791": {
+    "ignore": true,
+    "name": "DAT4 styregruppem\u00f8de"
+  },
+  "F19-28497": {
+    "ignore": false,
+    "name": "SLIAL"
+  },
+  "F19-28797": {
+    "ignore": false,
+    "name": "Software 4"
+  },
+  "E18-26435": {
+    "ignore": false,
+    "name": "U' Course: Semesterrum Datalogi 1 og Software 1 - Note: Aflevering af procesanalyse - Time: 10:00 - 10:00"
+  },
+  "E18-27350": {
+    "ignore": false,
+    "name": "U' DEB exam - E18 closes"
   },
   "F18-23935": {
-    "name": "U' Course: Software Innovation (DAT8  SW8  IDA8  IxD8  CS-IT8) - Note: Mini Project - Time: 10:15 - 12:00 - Teacher: Ivan Aaen|ivan@cs.aau.dk",
-    "ignore": false
+    "ignore": false,
+    "name": "U' Course: Software Innovation (DAT8  SW8  IDA8  IxD8  CS-IT8) - Note: Mini Project - Time: 10:15 - 12:00 - Teacher: Ivan Aaen|ivan@cs.aau.dk"
+  },
+  "E18-27356": {
+    "ignore": false,
+    "name": "U' Course: Machine Intelligence (MI) (DAT5  SW5  CS-IT7) - Note: Q&amp;A session - Time: 14:00 - 16:00 - Place: 0.1.95 - Teacher: Thomas Dyhre Nielsen|tdn@cs.aau.dk"
+  },
+  "F19-28781": {
+    "ignore": false,
+    "name": "SS"
+  },
+  "E18-27347": {
+    "ignore": true,
+    "name": "SU"
+  },
+  "E18-26447": {
+    "ignore": false,
+    "name": "U' Course: Ordin\u00e6r- og reeksamen vinter 2018/2019 - F\u00f8rste Studie\u00e5r  Aalborg - Note: Reeksamen fra 1. semester - Time: 8:00 - 14:00 - Place: Se info p\u00e5 moodle-rummet."
+  },
+  "F19-28356": {
+    "ignore": true,
+    "name": "Helligdag"
+  },
+  "E18-27362": {
+    "ignore": false,
+    "name": "AD1"
+  },
+  "E18-26902": {
+    "ignore": false,
+    "name": "PV"
+  },
+  "F19-28773": {
+    "ignore": false,
+    "name": "PSS"
+  },
+  "F19-28499": {
+    "ignore": true,
+    "name": "Studiecafe for IT-uddannelser"
+  },
+  "E18-27626": {
+    "ignore": false,
+    "name": "U' Course: Studiecafe for 1. semester - E18 - Time: 15:00 - 18:00 - Place: C1-12 Skibbrogade 5"
   }
 }
