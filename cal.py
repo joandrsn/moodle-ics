@@ -11,23 +11,18 @@ def getModifiedCalendar():
   updateEvents(calendar.events)
   return str(calendar)
 
-def cancelUnwantedEvents(calendar):
+def removeUnwantedEvents(calendar):
   calendar.events = [e for e in calendar.events if not shouldEventBeRemoved(e)]
+  
 
-def shouldEventBeCancelled(event):
-  if not event.name.startswith('Course:'):
-    return False
+def shouldEventBeRemoved(event):
   startmonth = event.begin.month
-  if startmonth in config.settings['ignoremonths']:
+  if not startmonth in config.settings['ignoremonths']:
     return False
-  identifier = getCourseID(event.categories)
-  if identifier == None:
+  courseid = getCourseID(event.categories)
+  if courseid == None:
     return False
-  if event.uid == '24281275@www.moodle.aau.dk':
-    print("wtf")
-  if identifier in config.unwantedcourses:
-    return True
-  return False
+  return courseid in config.unwantedcourses:
 
 def updateEvents(events):
   for event in events:
