@@ -17,17 +17,21 @@ def loadConfig():
     if value['ignore']:
       unwantedcourses.append(key)
 
-def getName(originalname, courseid):
+def getName(courseid):
   global mapping
-  inputvalue = mapping.get(courseid)
-  if inputvalue is not None:
-    return inputvalue['name']
+  element = mapping.get(courseid)
+  if element is not None:
+    return element['name']
+  return element
+
+def storeName(originalname, courseid):
+  global mapping
   name = "U' " + originalname
   mapping[courseid] = {
     'name': name,
     'ignore': False
   }
-  updateMapping()
+  updateMapping();
   return name
 
 def updateMapping():

@@ -22,19 +22,20 @@ def shouldEventBeRemoved(event):
   courseid = getCourseID(event.categories)
   if courseid == None:
     return False
-  return courseid in config.unwantedcourses:
+  return courseid in config.unwantedcourses
 
 def updateEvents(events):
   for event in events:
-    if not event.name.startswith('Course:'):
-      continue
     courseid = getCourseID(event.categories)
-    namedict = parseEventSummary(event.name)
+    originalname = event.name
+    event.name = getNewName(originalname, courseid)
+    event.url = getNewURL(courseid)
+    if not originalname.startswith('Course:'):
+      continue
+    namedict = parseEventSummary(originalname)
 
     event.description = getNewDescription(event.description, namedict.get('Note'), namedict.get('Teacher'))
     event.location = getNewLocation(event.location, namedict.get('Place'))
-    event.url = getNewURL(courseid)
-    event.name = getNewName(event.name, courseid)
 
 def getCourseID(categories):
   for category in categories: break
@@ -70,7 +71,25 @@ def getNewLocation(orignallocation, newlocation):
   return newlocation
 
 def getNewName(originalname, courseid):
-  return config.getName(originalname, courseid)
+  shortname = config.getName(courseid)
+  if originalname.startswith('Course:'):
+    if shortname is not None:
+      return shortname
+    else:
+      return config.storeName(originalname, courseid)
+  else:
+    if shortname is not None:
+      return shortname + ": " + originalname
+    else:
+      return originalname
+
+  searchvalue = originalname
+  if not originalname.startswith('Course:'):
+    result = ''
+  shortname = config.getName(searchvalue, courseid)
+  if shortname == '':
+    return originalname
+  return shortname + ':' + originalname
 
 def getNewURL(courseid):
   match = re.search(r'\d+$', courseid)
