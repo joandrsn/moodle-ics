@@ -14,7 +14,6 @@ def getModifiedCalendar():
 def removeUnwantedEvents(calendar):
   calendar.events = [e for e in calendar.events if not shouldEventBeRemoved(e)]
   
-
 def shouldEventBeRemoved(event):
   startmonth = event.begin.month
   if not startmonth in config.settings['ignoremonths']:
@@ -79,17 +78,9 @@ def getNewName(originalname, courseid):
       return config.storeName(originalname, courseid)
   else:
     if shortname is not None:
-      return shortname + ": " + originalname
+      return "{}: {}".format(shortname, originalname)
     else:
       return originalname
-
-  searchvalue = originalname
-  if not originalname.startswith('Course:'):
-    result = ''
-  shortname = config.getName(searchvalue, courseid)
-  if shortname == '':
-    return originalname
-  return shortname + ':' + originalname
 
 def getNewURL(courseid):
   match = re.search(r'\d+$', courseid)
