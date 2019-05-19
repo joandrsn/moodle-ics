@@ -1,0 +1,10 @@
+{
+  "F19-12345": {
+    "ignore": true,
+    "name": "Semester course"
+  },
+  "F19-12347": {
+    "ignore": false,
+    "name": "SS"
+  }
+}

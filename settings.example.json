@@ -1,0 +1,15 @@
+{
+  "feed": "https://www.moodle.aau.dk/calendar/export_execute.php?userid=XXXXXX&authtoken=YYYYYY&preset_what=all&preset_time=custom",
+  "key": "specify-me",
+  "ignoremonths": [
+    2,
+    3,
+    4,
+    5,
+    9,
+    10,
+    11,
+    12
+  ],
+  "baseurl": "https://www.moodle.aau.dk/course/view.php?id="
+}
