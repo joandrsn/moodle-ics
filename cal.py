@@ -9,6 +9,7 @@ def getModifiedCalendar():
   calendar = Calendar(moodle_cal.getCalendar())
   removeUnwantedEvents(calendar)
   updateEvents(calendar.events)
+  config.updateMapping()
   return str(calendar)
 
 def removeUnwantedEvents(calendar):
