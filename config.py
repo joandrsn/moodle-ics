@@ -34,7 +34,7 @@ def get_name(courseid):
 def store_name(originalname, courseid):
     global mapping, mappingUpdated
     name = "U' " + originalname
-    if mapping[courseid] is not None:
+    if mapping.get(courseid) is not None:
         return
     mapping[courseid] = {"name": name, "ignore": False}
     mappingUpdated = True
