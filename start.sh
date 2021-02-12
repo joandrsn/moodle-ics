@@ -23,4 +23,4 @@ case "$1" in
 esac
 
 
-pipenv run flask run
+flask run
